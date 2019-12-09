@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- 管理service层 -->
+	<context:component-scan base-package="com.woniu.service"/>
+	<!-- spring 集成mybatis -->
+	<!-- 1.sqlSessionFactory -->
+	<bean id="ds" class="com.alibaba.druid.pool.DruidDataSource">
+		<!-- <property name="driverClassName" value="com.mysql.jdbc.Driver"></property> -->
+		<property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=utf8"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sf" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- datasource -->
+		<property name="dataSource" ref="ds"></property>
+		<!-- 指定别名 -->
+		<property name="typeAliasesPackage" value="com.woniu.pojo"></property>
+	</bean>
+	<!-- 管理dao -->
+	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.woniu.dao"></property>
+	</bean>
+	<!-- 2.声明式事物 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+	<!-- 启用事物 -->
+	<tx:annotation-driven/>
+	
+	
+	
+
+</beans>
