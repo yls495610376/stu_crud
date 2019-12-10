@@ -36,5 +36,9 @@ public class UserController {
 		req.setAttribute("stu", service.updateByPrimaryKey(stu));
 		return "findAll";
 	}
+	private void mian() {
+		// TODO Auto-generated method stub
+		System.out.println("UserController.mian()");
+	}
 	
 }
