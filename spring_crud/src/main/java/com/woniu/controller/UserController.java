@@ -30,7 +30,7 @@ public class UserController {
 
 		System.out.println("----");
 
-		System.out.println("╪ссм");
+		System.out.println("╪ссм***");
 
 	}
 	
