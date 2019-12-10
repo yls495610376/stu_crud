@@ -39,6 +39,7 @@ public class UserController {
 	private void mian() {
 		// TODO Auto-generated method stub
 		System.out.println("UserController.mian()");
+		System.out.println("add main");
 	}
 	
 }
