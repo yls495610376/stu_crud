@@ -29,7 +29,7 @@ public class UserController {
 		System.out.println("wo fengle!!");
 
 		System.out.println("----");
-		System.out.println("UserController.mian()");
+		System.out.println("UserController.mian()"+ss);
 		
 
 	}
