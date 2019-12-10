@@ -16,7 +16,6 @@ public class UserController {
 	public String findOne(Integer sid,HttpServletRequest req) {
 		System.out.println("UserController.findOne()");
 		req.setAttribute("stu", service.findOne(sid));
-		
 		return "findOne";
 		
 	}
