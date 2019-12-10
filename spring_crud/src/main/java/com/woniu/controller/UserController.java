@@ -24,6 +24,9 @@ public class UserController {
 		req.setAttribute("stuList", service.findAll());
 		return "list";
 	}
-	
+	private void mian() {
+		// TODO Auto-generated method stub
+		System.out.println("wo fengle!!");
+	}
 	
 }
