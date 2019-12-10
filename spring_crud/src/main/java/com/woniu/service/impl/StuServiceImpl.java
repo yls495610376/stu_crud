@@ -27,7 +27,7 @@ public class StuServiceImpl implements IStuService{
 		return mapper.selectByPrimaryKey(sid);
 	}
 
-
+	@Transactional
 	public int updateByPrimaryKey(Stu stu) {
 		// TODO Auto-generated method stub
 		return mapper.updateByPrimaryKey(stu);
