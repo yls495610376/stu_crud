@@ -1,6 +1,5 @@
 package com.woniu.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.woniu.pojo.Stu;
 import com.woniu.service.IStuService;
-import com.woniu.service.impl.StuServiceImpl;
 
 @Controller
 public class UserController {
@@ -24,14 +21,13 @@ public class UserController {
 		req.setAttribute("stuList", service.findAll());
 		return "list";
 	}
-	private void mian() {
-		// TODO Auto-generated method stub
-		System.out.println("wo fengle!!");
 
-		System.out.println("----");
-		System.out.println("UserController.mian()");
+	@RequestMapping("findOne")
+	public String findOne(Integer sid,HttpServletRequest req) {
+		System.out.println("UserController.findOne()");
+		req.setAttribute("stu", service.findOne(sid));
+		return "findOne";
 		
-
 	}
 	
 }

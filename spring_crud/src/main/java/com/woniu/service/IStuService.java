@@ -6,4 +6,6 @@ import com.woniu.pojo.Stu;
 
 public interface IStuService {
 	List<Stu> findAll();
+
+	Stu findOne(Integer sid);
 }

@@ -20,4 +20,11 @@ public class StuServiceImpl implements IStuService{
 		return mapper.selectByExample(null);
 	}
 	
+
+	@Transactional(readOnly = true)
+	public Stu findOne(Integer sid) {
+		// TODO Auto-generated method stub
+		return mapper.selectByPrimaryKey(sid);
+	}
+
 }
