@@ -8,4 +8,6 @@ public interface IStuService {
 	List<Stu> findAll();
 
 	Stu findOne(Integer sid);
+	
+	int updateByPrimaryKey(Stu stu);
 }
